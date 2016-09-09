@@ -10,7 +10,7 @@ import java.sql.Timestamp;
  */
 
 @Entity
-class Photo {
+public class Photo {
 
     @Id
     @GeneratedValue

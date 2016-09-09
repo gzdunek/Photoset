@@ -1,0 +1,59 @@
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.photo-card {
+    background-color: #f8f8f8;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    border: 1px solid #e7e7e7;
+}
+
+.top-info {
+    margin: 0px 0px 10px;
+}
+
+.top-info img {
+    height: 30px;
+    max-width: 30px;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.top-info h4 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px 0 0 5px;
+}
+
+.pull-right span {
+    vertical-align: middle;
+    margin: 2px 0 0 5px;
+    color: darkgray;
+    display: inline-block;
+}
+
+.pull-right h5 {
+    vertical-align: middle;
+    margin: 5px 0 0 5px;
+    color: darkgray;
+    display: inline-block;
+}
+
+.photo-card img {
+    width: 100%;
+}
+
+.photo-card h3 {
+    margin-top: 10px;
+    font-family: Helvetica, sans-serif;
+}
+
+.photo-card p {
+    font-family: Helvetica, sans-serif;
+    color: darkgray;
+}
