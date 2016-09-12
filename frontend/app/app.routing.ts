@@ -5,6 +5,7 @@
 import {ModuleWithProviders} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {HomeComponent} from "./components/home/home.component";
+import {AddPhotoComponent} from "./components/add-photo/add-photo.component";
 
 const appRoutes: Routes = [
     {
@@ -15,6 +16,10 @@ const appRoutes: Routes = [
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
+    },
+    {
+        path: 'add',
+        component: AddPhotoComponent
     }
 ];
 

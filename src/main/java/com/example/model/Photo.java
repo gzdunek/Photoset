@@ -17,6 +17,9 @@ public class Photo {
     private Long id;
 
     @Column(nullable = false)
+    private String fileName;
+
+    @Column(nullable = false)
     private String title;
 
     private String description;
@@ -36,6 +39,14 @@ public class Photo {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
     public String getTitle() {

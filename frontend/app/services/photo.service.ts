@@ -5,6 +5,7 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 import {ApplicationProperties} from "../config/config";
+import {Photo} from "../models/photo";
 
 @Injectable()
 export class PhotoService {
@@ -16,5 +17,13 @@ export class PhotoService {
 
     getByNewest() {
         return this.http.get(this.properties.newestPhotosUrl, {headers: this.properties.jsonHeader});
+    }
+
+    add(photo: Photo) {
+        return this.http.post(this.properties.addPhotoUrl, photo, {headers: this.properties.jsonHeader});
+    }
+
+    deleteImage(fileName: string) {
+        return this.http.delete(this.properties.deleteImageUrl.concat('/' + fileName), {headers: this.properties.jsonHeader});
     }
 }

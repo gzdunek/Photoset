@@ -8,6 +8,13 @@
     vertical-align: top;
 }
 
+.navbar-default {
+    /*background: transparent;*/
+    /*background: url("http://localhost:8080/images/background.jpg") fixed center center;*/
+    background: white;
+    border-color: transparent;
+}
+
 .navbar .navbar-collapse {
     text-align: center;
 }

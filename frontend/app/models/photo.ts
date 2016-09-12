@@ -6,6 +6,7 @@ import {User} from "./user";
 
 export class Photo {
     id: number;
+    fileName: string;
     title: string;
     description: string;
     creationTimestamp: Date;

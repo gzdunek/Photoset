@@ -15,13 +15,16 @@ var navbar_component_1 = require("./components/navbar/navbar.component");
 var app_routing_1 = require("./app.routing");
 var home_component_1 = require("./components/home/home.component");
 var http_1 = require("@angular/http");
+var forms_1 = require("@angular/forms");
+var add_photo_component_1 = require("./components/add-photo/add-photo.component");
+var ng2_uploader_1 = require("ng2-uploader/ng2-uploader");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule],
-            declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, home_component_1.HomeComponent],
+            imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule, forms_1.FormsModule],
+            declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, home_component_1.HomeComponent, add_photo_component_1.AddPhotoComponent, ng2_uploader_1.UPLOAD_DIRECTIVES],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

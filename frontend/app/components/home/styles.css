@@ -1,15 +1,21 @@
+.container {
+    /*background-color: #ff02a3;*/
+    /*background-image: url("http://localhost/images/background.jpg");*/
+}
+
 .col-centered {
     float: none;
     margin: 0 auto;
 }
 
 .photo-card {
-    background-color: #f8f8f8;
+    /*background-color: #f8f8f8;*/
     margin-bottom: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    border: 1px solid #e7e7e7;
+    background-color: white;
+}
+
+.info {
+    padding: 10px;
 }
 
 .top-info {
@@ -48,9 +54,11 @@
     width: 100%;
 }
 
-.photo-card h3 {
+.photo-card h4 {
     margin-top: 10px;
-    font-family: Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #5d5d5d;
 }
 
 .photo-card p {

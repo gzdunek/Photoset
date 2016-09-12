@@ -1,0 +1,98 @@
+.col-centered {
+    padding: 15px;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-group label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #5d5d5d;
+}
+
+.form-control {
+    height: 35px;
+    /*border: 2px solid #c6c7c7;*/
+    background-color: #f9f9f9;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #5d5d5d;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-top: 0px;
+}
+
+.btn-file {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 0px;
+    background-color: #f9f9f9;
+    color: #5d5d5d;
+    border: none;
+}
+
+.btn-file input[type=file] {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    /*background: white;*/
+    cursor: inherit;
+    display: block;
+}
+
+.imageContainer {
+    width: 300px;
+    height: auto;
+    position: relative;
+    margin: auto;
+    float: none;
+}
+
+.divOnImage {
+    text-align: right;
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    padding: 5px;
+    color: #ff0004;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.removeImage {
+    text-align: right;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.submitButton {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    border-radius: 0;
+    border: 3px solid #5d5d5d;
+    text-transform: uppercase;
+    color: #5d5d5d;
+}
