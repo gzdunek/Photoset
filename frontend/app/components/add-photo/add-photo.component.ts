@@ -5,6 +5,8 @@ import {Component, OnInit, NgZone} from "@angular/core";
 import {ApplicationProperties} from "../../config/config";
 import {Photo} from "../../models/photo";
 import {PhotoService} from "../../services/photo.service";
+import {Router} from "@angular/router";
+import {UserService} from "../../services/user.service";
 
 @Component({
     selector: 'add-photo',
@@ -25,7 +27,7 @@ export class AddPhotoComponent implements OnInit {
     private properties: ApplicationProperties = new ApplicationProperties();
 
 
-    constructor(private photoService: PhotoService) {
+    constructor(private userService: UserService, private photoService: PhotoService, private router: Router) {
     }
 
     ngOnInit(): void {
@@ -52,9 +54,14 @@ export class AddPhotoComponent implements OnInit {
     }
 
     onSubmit() {
-        this.photoService.add(this.photo).subscribe(() => {
-            alert("Added!");
+        this.userService.getUserByUsername(this.properties.usernameFromLocalStorage).subscribe(user => {
+            this.photo.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
+            this.photoService.add(this.photo).subscribe(() => {
+                alert("Added!");
+                this.router.navigate(['']);
+            });
         });
+
     }
 
     deleteImage() {

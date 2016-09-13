@@ -1,0 +1,39 @@
+.col-centered {
+    padding: 15px;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-control {
+    height: 35px;
+    background-color: #f9f9f9;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    color: #5d5d5d;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: darkgray;
+    margin-top: 0px;
+}
+
+.submitButton {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    border-radius: 0;
+    border: 3px solid #5d5d5d;
+    text-transform: uppercase;
+    color: #5d5d5d;
+}
+
+.has-error input {
+    background: lightcoral;
+}

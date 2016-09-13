@@ -16,14 +16,14 @@ export class PhotoService {
     }
 
     getByNewest() {
-        return this.http.get(this.properties.newestPhotosUrl, {headers: this.properties.jsonHeader});
+        return this.http.get(this.properties.newestPhotosUrl, {headers: this.properties.authHeader});
     }
 
     add(photo: Photo) {
-        return this.http.post(this.properties.addPhotoUrl, photo, {headers: this.properties.jsonHeader});
+        return this.http.post(this.properties.addPhotoUrl, photo, {headers: this.properties.authHeader});
     }
 
     deleteImage(fileName: string) {
-        return this.http.delete(this.properties.deleteImageUrl.concat('/' + fileName), {headers: this.properties.jsonHeader});
+        return this.http.delete(this.properties.deleteImageUrl.concat('/' + fileName), {headers: this.properties.authHeader});
     }
 }

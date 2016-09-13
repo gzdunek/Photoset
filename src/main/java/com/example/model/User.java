@@ -1,5 +1,6 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -18,6 +19,9 @@ public class User {
     private Long id;
 
     @Column(nullable = false)
+    private String email;
+
+    @Column(nullable = false)
     private String username;
 
     @Column(nullable = false)
@@ -26,6 +30,7 @@ public class User {
     @CreationTimestamp
     private Timestamp creationTimestamp;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Photo> photos;
 
@@ -36,6 +41,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getUsername() {

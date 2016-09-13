@@ -18,13 +18,22 @@ var http_1 = require("@angular/http");
 var forms_1 = require("@angular/forms");
 var add_photo_component_1 = require("./components/add-photo/add-photo.component");
 var ng2_uploader_1 = require("ng2-uploader/ng2-uploader");
+var register_user_component_1 = require("./components/register-user/register-user.component");
+var async_email_validator_1 = require("./validators/async-email.validator");
+var async_username_validator_1 = require("./validators/async-username.validator");
+var login_user_component_1 = require("./components/login-user/login-user.component");
+var user_service_1 = require("./services/user.service");
+var logged_in_guard_1 = require("./guards/logged-in.guard");
+var equal_validator_1 = require("./validators/equal.validator");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule, forms_1.FormsModule],
-            declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, home_component_1.HomeComponent, add_photo_component_1.AddPhotoComponent, ng2_uploader_1.UPLOAD_DIRECTIVES],
+            providers: [user_service_1.UserService, logged_in_guard_1.LoggedInGuard],
+            declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, home_component_1.HomeComponent, add_photo_component_1.AddPhotoComponent, ng2_uploader_1.UPLOAD_DIRECTIVES, register_user_component_1.RegisterUserComponent,
+                async_email_validator_1.AsyncEmailValidator, equal_validator_1.EqualValidator, async_username_validator_1.AsyncUsernameValidator, login_user_component_1.LoginUserComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -1,24 +1,21 @@
 package com.example;
 
+import com.example.config.JwtFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.embedded.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
 public class PhotosetApplication {
 
     @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("*")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS");
-            }
-        };
+    public FilterRegistrationBean jwtFilter() {
+        final FilterRegistrationBean registration = new FilterRegistrationBean();
+        registration.setFilter(new JwtFilter());
+        registration.addUrlPatterns("/photo/add/");
+        registration.addUrlPatterns("/photo/upload/");
+        return registration;
     }
 
     public static void main(String[] args) {
