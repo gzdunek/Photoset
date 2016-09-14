@@ -15,7 +15,7 @@ import {Title} from "@angular/platform-browser";
     providers: [UserService],
     directives: [AsyncEmailValidator, AsyncUsernameValidator, EqualValidator],
     templateUrl: './app/components/register-user/register-user.component.html',
-    styleUrls: ['app/components/register-user/styles.css']
+    styleUrls: ['styles.css', 'app/components/register-user/styles.css']
 })
 export class RegisterUserComponent {
     private user: User = new User();

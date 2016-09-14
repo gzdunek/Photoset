@@ -4,7 +4,7 @@
             <div class="photo-card" *ngFor="let photo of photos">
                 <img src="http://localhost:8080/images/{{photo.fileName}}">
                 <div class="top-info">
-                    <div class="pull-left">
+                    <div class="pull-left" style="cursor: pointer" (click)="onSelect(photo.user)">
                         <img src="http://localhost:8080/images/{{photo.fileName}}">
                         <h5>{{photo.user.username}}</h5>
                     </div>

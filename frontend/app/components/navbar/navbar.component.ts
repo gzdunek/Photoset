@@ -8,7 +8,7 @@ import {UserService} from "../../services/user.service";
 @Component({
     selector: 'navbar',
     templateUrl: './app/components/navbar/navbar.component.html',
-    styleUrls: ['app/components/navbar/styles.css']
+    styleUrls: ['styles.css', 'app/components/navbar/styles.css']
 })
 export class NavbarComponent {
     constructor(private userService: UserService) {

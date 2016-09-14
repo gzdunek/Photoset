@@ -9,9 +9,8 @@ import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'login-user',
-    // providers: [UserService],
     templateUrl: './app/components/login-user/login-user.component.html',
-    styleUrls: ['app/components/login-user/styles.css']
+    styleUrls: ['styles.css', 'app/components/login-user/styles.css']
 })
 export class LoginUserComponent {
     private model = {'username': '', 'password': ''};

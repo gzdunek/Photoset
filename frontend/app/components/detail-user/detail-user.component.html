@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-7 col-centered">
+            <div class="info">
+                <img src="http://localhost:8080/images/5s86c.jpg">
+                <div class="text-info">
+                    <h3>{{user.username}}</h3>
+                    <p>Joined at {{user.creationTimestamp | date:'dd MMMM yyyy'}}</p>
+                </div>
+
+            </div>
+            <div class="gallery">
+                <h3 class="top-title">Photos</h3>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb" *ngFor="let photo of photos">
+                    <a class="thumbnail" href="#">
+                        <img class="img-responsive" src="http://localhost:8080/images/{{photo.fileName}}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

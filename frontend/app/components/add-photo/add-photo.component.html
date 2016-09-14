@@ -1,20 +1,17 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-centered" style="background: white">
-            <h3>Add your own photo!</h3>
+        <div class="col-md-6 col-centered">
+            <h3 class="top-title">Add your own photo!</h3>
             <form (ngSubmit)="onSubmit()" autocomplete="off" #addForm="ngForm">
                 <div class="form-group">
-                    <!--<label for="photoTitle">Title</label>-->
                     <input type="text" class="form-control" id="photoTitle" placeholder="Title"
                            [(ngModel)]="photo.title" name="title" required maxlength="100">
                 </div>
                 <div class="form-group">
-                    <!--<label for="photoDescription">Description</label>-->
                     <input type="text" class="form-control" id="photoDescription" placeholder="Description"
                            [(ngModel)]="photo.description" name="description">
                 </div>
                 <div class="form-group">
-                    <!--<label for="uploadImage">Image</label>-->
                     <div class="btn btn-primary btn-file">
                         <span class="glyphicon glyphicon-camera"></span> Browse for image
                         <input type="file" ngFileSelect [options]="basicOptions"

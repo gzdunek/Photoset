@@ -1,12 +1,3 @@
-.container {
-    font-family: 'Open Sans', sans-serif;
-}
-
-.col-centered {
-    float: none;
-    margin: 0 auto;
-}
-
 .photo-card {
     margin-bottom: 25px;
     background-color: white;
@@ -14,10 +5,11 @@
 
 .bottom-info {
     padding: 10px;
+    text-align: left;
 }
 
 .top-info {
-    color: darkgray;
+    color: #777;
     margin: 10px 10px 0;
 }
 
@@ -36,10 +28,13 @@
     margin: 5px 0 0 5px;
 }
 
+.top-info h5:hover {
+    color: #444;
+}
+
 .top-info span {
     vertical-align: middle;
     margin: 2px 0 0 5px;
-    color: darkgray;
     display: inline-block;
 }
 

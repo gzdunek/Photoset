@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-centered" style="background: white">
-            <h3>Register</h3>
+        <div class="col-md-6 col-centered">
+            <h3 class="top-title">Register</h3>
             <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
                 <div class="form-group" [ngClass]="{'has-error': !(username.valid || username.pristine)}">
                     <input type="text" class="form-control" id="username" placeholder="Username"

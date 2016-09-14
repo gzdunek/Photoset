@@ -2,6 +2,7 @@ package com.example.service.impl;
 
 import com.example.dao.PhotoDao;
 import com.example.model.Photo;
+import com.example.model.User;
 import com.example.service.PhotoService;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +31,10 @@ public class PhotoServiceImpl implements PhotoService {
     @Override
     public Photo add(Photo photo) {
         return photoDao.save(photo);
+    }
+
+    @Override
+    public List<Photo> getByUser(User user) {
+        return photoDao.findByUser(user);
     }
 }

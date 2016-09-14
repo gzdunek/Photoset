@@ -1,45 +1,15 @@
-.col-centered {
-    padding: 15px;
-    float: none;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.form-control {
-    height: 35px;
-    /*border: 2px solid #c6c7c7;*/
-    background-color: #f9f9f9;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    text-align: center;
-    border: none;
-    border-radius: 0px;
-    box-shadow: none;
-    color: #5d5d5d;
-}
-
-h3 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: darkgray;
-    margin-top: 0px;
-}
-
 .btn-file {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     position: relative;
     overflow: hidden;
     margin-bottom: 10px;
-    border-radius: 0px;
-    background-color: #f9f9f9;
+    border-radius: 0;
+    background-color: white;
     color: #5d5d5d;
     border: none;
 }
 
 .btn-file input[type=file] {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     position: absolute;
     top: 0;
@@ -51,7 +21,6 @@ h3 {
     filter: alpha(opacity=0);
     opacity: 0;
     outline: none;
-    /*background: white;*/
     cursor: inherit;
     display: block;
 }
@@ -68,8 +37,8 @@ h3 {
     text-align: right;
     float: left;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     z-index: 1000;
     padding: 5px;
     color: #ff0004;
@@ -82,13 +51,4 @@ h3 {
     border: none;
     box-shadow: none;
     background: transparent;
-}
-
-.submitButton {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    border-radius: 0;
-    border: 3px solid #5d5d5d;
-    text-transform: uppercase;
-    color: #5d5d5d;
 }

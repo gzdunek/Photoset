@@ -2,7 +2,9 @@ package com.example.controller;
 
 import com.example.helper.PhotoIdentifierGenerator;
 import com.example.model.Photo;
+import com.example.model.User;
 import com.example.service.PhotoService;
+import com.example.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -16,6 +18,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created on 09.09.2016.
@@ -26,12 +29,14 @@ import java.util.List;
 public class PhotoController {
 
     private final PhotoService photoService;
+    private final UserService userService;
 
     private final String path = new File("src/main/resources/public/images").getAbsolutePath();
 
 
-    public PhotoController(PhotoService photoService) {
+    public PhotoController(PhotoService photoService, UserService userService) {
         this.photoService = photoService;
+        this.userService = userService;
     }
 
     @PostMapping("add")
@@ -65,6 +70,12 @@ public class PhotoController {
     @GetMapping("getByNewest")
     public List<Photo> getByNewest() {
         return photoService.getByNewest();
+    }
+
+    @GetMapping("getByUser/{user}")
+    public List<Photo> getByUser(@PathVariable String user) {
+        Optional<User> userOptional = userService.getByUsername(user);
+        return photoService.getByUser(userOptional.orElse(null));
     }
 
     @DeleteMapping("delete/{fileName:.+}")

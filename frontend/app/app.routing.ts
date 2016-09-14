@@ -9,6 +9,7 @@ import {AddPhotoComponent} from "./components/add-photo/add-photo.component";
 import {RegisterUserComponent} from "./components/register-user/register-user.component";
 import {LoginUserComponent} from "./components/login-user/login-user.component";
 import {LoggedInGuard} from "./guards/logged-in.guard";
+import {DetailUserComponent} from "./components/detail-user/detail-user.component";
 
 const appRoutes: Routes = [
     {
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
     {
         path: 'login',
         component: LoginUserComponent
+    },
+    {
+        path: 'user/:name',
+        component: DetailUserComponent
     }
 ];
 

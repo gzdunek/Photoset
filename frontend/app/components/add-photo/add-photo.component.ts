@@ -13,7 +13,7 @@ import {Title} from "@angular/platform-browser";
     selector: 'add-photo',
     providers: [PhotoService],
     templateUrl: './app/components/add-photo/add-photo.component.html',
-    styleUrls: ['app/components/add-photo/styles.css']
+    styleUrls: ['styles.css', 'app/components/add-photo/styles.css']
 })
 export class AddPhotoComponent implements OnInit {
     private zone: NgZone;
