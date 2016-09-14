@@ -9,3 +9,4 @@ Photoset is a web application which allows you to share your photos and rate oth
 * Hibernate
 * Angular 2
 * Bootstrap 3
+* JSON Web Tokens
