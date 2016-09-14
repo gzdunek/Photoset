@@ -1,6 +1,5 @@
 .container {
-    /*background-color: #ff02a3;*/
-    /*background-image: url("http://localhost/images/background.jpg");*/
+    font-family: 'Open Sans', sans-serif;
 }
 
 .col-centered {
@@ -9,43 +8,37 @@
 }
 
 .photo-card {
-    /*background-color: #f8f8f8;*/
     margin-bottom: 25px;
     background-color: white;
 }
 
-.info {
+.bottom-info {
     padding: 10px;
 }
 
 .top-info {
-    margin: 0px 0px 10px;
+    color: darkgray;
+    margin: 10px 10px 0;
 }
 
 .top-info img {
-    height: 30px;
-    max-width: 30px;
+    height: 25px;
+    max-width: 25px;
     border-radius: 100%;
     display: inline-block;
     vertical-align: top;
 }
 
-.top-info h4 {
+.top-info h5 {
+    font-weight: 700;
     display: inline-block;
     vertical-align: middle;
     margin: 5px 0 0 5px;
 }
 
-.pull-right span {
+.top-info span {
     vertical-align: middle;
     margin: 2px 0 0 5px;
-    color: darkgray;
-    display: inline-block;
-}
-
-.pull-right h5 {
-    vertical-align: middle;
-    margin: 5px 0 0 5px;
     color: darkgray;
     display: inline-block;
 }
@@ -55,13 +48,9 @@
 }
 
 .photo-card h4 {
-    margin-top: 10px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
     color: #5d5d5d;
 }
 
 .photo-card p {
-    font-family: Helvetica, sans-serif;
-    color: darkgray;
+    color: #5d5d5d;
 }

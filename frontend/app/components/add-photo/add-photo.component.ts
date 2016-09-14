@@ -7,6 +7,7 @@ import {Photo} from "../../models/photo";
 import {PhotoService} from "../../services/photo.service";
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'add-photo',
@@ -27,7 +28,8 @@ export class AddPhotoComponent implements OnInit {
     private properties: ApplicationProperties = new ApplicationProperties();
 
 
-    constructor(private userService: UserService, private photoService: PhotoService, private router: Router) {
+    constructor(private userService: UserService, private photoService: PhotoService, private router: Router, private title: Title) {
+        this.title.setTitle("Add photo");
     }
 
     ngOnInit(): void {

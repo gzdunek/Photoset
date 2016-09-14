@@ -31,7 +31,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule, forms_1.FormsModule],
-            providers: [user_service_1.UserService, logged_in_guard_1.LoggedInGuard],
+            providers: [user_service_1.UserService, logged_in_guard_1.LoggedInGuard, platform_browser_1.Title],
             declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, home_component_1.HomeComponent, add_photo_component_1.AddPhotoComponent, ng2_uploader_1.UPLOAD_DIRECTIVES, register_user_component_1.RegisterUserComponent,
                 async_email_validator_1.AsyncEmailValidator, equal_validator_1.EqualValidator, async_username_validator_1.AsyncUsernameValidator, login_user_component_1.LoginUserComponent],
             bootstrap: [app_component_1.AppComponent]

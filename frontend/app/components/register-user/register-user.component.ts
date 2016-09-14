@@ -8,6 +8,7 @@ import {UserService} from "../../services/user.service";
 import {AsyncEmailValidator} from "../../validators/async-email.validator";
 import {AsyncUsernameValidator} from "../../validators/async-username.validator";
 import {EqualValidator} from "../../validators/equal.validator";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'register-user',
@@ -19,7 +20,8 @@ import {EqualValidator} from "../../validators/equal.validator";
 export class RegisterUserComponent {
     private user: User = new User();
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private title: Title) {
+        this.title.setTitle("Register");
     }
 
     onSubmit() {

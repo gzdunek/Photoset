@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
+import {BrowserModule, Title} from "@angular/platform-browser";
 import {AppComponent} from "./app.component";
 import {NavbarComponent} from "./components/navbar/navbar.component";
 import {routing} from "./app.routing";
@@ -17,7 +17,7 @@ import {LoggedInGuard} from "./guards/logged-in.guard";
 import {EqualValidator} from "./validators/equal.validator";
 @NgModule({
     imports: [BrowserModule, routing, HttpModule, FormsModule],
-    providers: [UserService, LoggedInGuard],
+    providers: [UserService, LoggedInGuard, Title],
     declarations: [AppComponent, NavbarComponent, HomeComponent, AddPhotoComponent, UPLOAD_DIRECTIVES, RegisterUserComponent,
         AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent],
     bootstrap: [AppComponent]

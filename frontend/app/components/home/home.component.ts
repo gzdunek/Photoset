@@ -5,6 +5,7 @@
 import {Component, OnInit} from "@angular/core";
 import {PhotoService} from "../../services/photo.service";
 import {Photo} from "../../models/photo";
+import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'home',
@@ -15,7 +16,8 @@ import {Photo} from "../../models/photo";
 export class HomeComponent implements OnInit {
     photos: Photo[];
 
-    constructor(private photoService: PhotoService) {
+    constructor(private photoService: PhotoService, private title: Title) {
+        this.title.setTitle("photo{set}");
     }
 
     ngOnInit(): void {
