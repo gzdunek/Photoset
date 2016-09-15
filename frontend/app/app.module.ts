@@ -16,11 +16,12 @@ import {UserService} from "./services/user.service";
 import {LoggedInGuard} from "./guards/logged-in.guard";
 import {EqualValidator} from "./validators/equal.validator";
 import {DetailUserComponent} from "./components/detail-user/detail-user.component";
+import {FindUsernameInListPipe} from "./pipes/find-username-in-list.pipe";
 @NgModule({
     imports: [BrowserModule, routing, HttpModule, FormsModule],
     providers: [UserService, LoggedInGuard, Title],
     declarations: [AppComponent, NavbarComponent, HomeComponent, AddPhotoComponent, UPLOAD_DIRECTIVES, RegisterUserComponent,
-        AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent, DetailUserComponent],
+        AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent, DetailUserComponent, FindUsernameInListPipe],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -19,6 +19,8 @@ export class ApplicationProperties {
     public uploadImageUrl: string = "http://localhost:8080/photo/upload";
     public deleteImageUrl: string = "http://localhost:8080/photo/delete";
     public addPhotoUrl: string = "http://localhost:8080/photo/add";
+    public addLikeToPhotoUrl: string = "http://localhost:8080/like/give";
+    public undoLikeToPhotoUrl: string = "http://localhost:8080/like/take";
 
     public registerUserUrl: string = "http://localhost:8080/user/register";
     public isEmailExistingUrl: string = "http://localhost:8080/user/isEmailExisting";

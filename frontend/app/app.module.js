@@ -26,6 +26,7 @@ var user_service_1 = require("./services/user.service");
 var logged_in_guard_1 = require("./guards/logged-in.guard");
 var equal_validator_1 = require("./validators/equal.validator");
 var detail_user_component_1 = require("./components/detail-user/detail-user.component");
+var find_username_in_list_pipe_1 = require("./pipes/find-username-in-list.pipe");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -34,7 +35,7 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule, forms_1.FormsModule],
             providers: [user_service_1.UserService, logged_in_guard_1.LoggedInGuard, platform_browser_1.Title],
             declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, home_component_1.HomeComponent, add_photo_component_1.AddPhotoComponent, ng2_uploader_1.UPLOAD_DIRECTIVES, register_user_component_1.RegisterUserComponent,
-                async_email_validator_1.AsyncEmailValidator, equal_validator_1.EqualValidator, async_username_validator_1.AsyncUsernameValidator, login_user_component_1.LoginUserComponent, detail_user_component_1.DetailUserComponent],
+                async_email_validator_1.AsyncEmailValidator, equal_validator_1.EqualValidator, async_username_validator_1.AsyncUsernameValidator, login_user_component_1.LoginUserComponent, detail_user_component_1.DetailUserComponent, find_username_in_list_pipe_1.FindUsernameInListPipe],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

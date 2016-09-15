@@ -4,6 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created on 08.09.2016.
@@ -24,13 +25,16 @@ public class Photo {
 
     private String description;
 
-    private Long likesCount;
+    private Long likesCount = 0L;
 
     @CreationTimestamp
     private Timestamp creationTimestamp;
 
     @ManyToOne
     private User user;
+
+    @ManyToMany
+    private List<User> likedByUsers;
 
 
     public Long getId() {
@@ -87,5 +91,29 @@ public class Photo {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public List<User> getLikedByUsers() {
+        return likedByUsers;
+    }
+
+    public void setLikedByUsers(List<User> likedByUsers) {
+        this.likedByUsers = likedByUsers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Photo photo = (Photo) o;
+
+        return id.equals(photo.id);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
     }
 }

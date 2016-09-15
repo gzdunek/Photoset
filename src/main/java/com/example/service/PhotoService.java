@@ -14,4 +14,6 @@ public interface PhotoService {
     Photo add(Photo photo);
 
     List<Photo> getByUser(User user);
+
+    Photo getPhotoById(Long photoId);
 }

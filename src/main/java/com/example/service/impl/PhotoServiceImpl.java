@@ -37,4 +37,9 @@ public class PhotoServiceImpl implements PhotoService {
     public List<Photo> getByUser(User user) {
         return photoDao.findByUser(user);
     }
+
+    @Override
+    public Photo getPhotoById(Long photoId) {
+        return photoDao.findOne(photoId);
+    }
 }

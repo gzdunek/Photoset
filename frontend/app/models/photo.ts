@@ -9,6 +9,9 @@ export class Photo {
     fileName: string;
     title: string;
     description: string;
+    likesCount: number;
     creationTimestamp: Date;
     user: User;
+    liked: boolean = false;
+    likedByUsers: User[];
 }

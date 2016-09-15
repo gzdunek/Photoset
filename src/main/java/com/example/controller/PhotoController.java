@@ -50,8 +50,6 @@ public class PhotoController {
         Iterator<String> it = multipartRequest.getFileNames();
         MultipartFile multipartFile = multipartRequest.getFile(it.next());
 
-
-//        String path = new File("src/main/resources/public/images").getAbsolutePath();
         String extension = multipartFile.getOriginalFilename().split("\\.")[1];
 
         PhotoIdentifierGenerator generator = new PhotoIdentifierGenerator();
@@ -72,6 +70,7 @@ public class PhotoController {
         return photoService.getByNewest();
     }
 
+
     @GetMapping("getByUser/{user}")
     public List<Photo> getByUser(@PathVariable String user) {
         Optional<User> userOptional = userService.getByUsername(user);
@@ -89,4 +88,5 @@ public class PhotoController {
 
         return "deleted " + fileName;
     }
+
 }

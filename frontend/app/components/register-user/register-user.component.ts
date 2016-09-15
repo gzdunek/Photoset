@@ -5,15 +5,12 @@
 import {Component} from "@angular/core";
 import {User} from "../../models/user";
 import {UserService} from "../../services/user.service";
-import {AsyncEmailValidator} from "../../validators/async-email.validator";
-import {AsyncUsernameValidator} from "../../validators/async-username.validator";
-import {EqualValidator} from "../../validators/equal.validator";
 import {Title} from "@angular/platform-browser";
 
 @Component({
     selector: 'register-user',
     providers: [UserService],
-    directives: [AsyncEmailValidator, AsyncUsernameValidator, EqualValidator],
+    // directives: [AsyncEmailValidator, AsyncUsernameValidator, EqualValidator],
     templateUrl: './app/components/register-user/register-user.component.html',
     styleUrls: ['styles.css', 'app/components/register-user/styles.css']
 })

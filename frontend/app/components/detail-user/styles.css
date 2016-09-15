@@ -36,4 +36,5 @@
 .thumbnail {
     border: none;
     padding-right: 15px;
+    background: transparent;
 }

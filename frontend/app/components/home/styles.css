@@ -1,13 +1,22 @@
+/*Photo card*/
 .photo-card {
     margin-bottom: 25px;
     background-color: white;
 }
 
-.bottom-info {
-    padding: 10px;
-    text-align: left;
+.photo-card img {
+    width: 100%;
 }
 
+.photo-card h4 {
+    color: #5d5d5d;
+}
+
+.photo-card p {
+    color: #5d5d5d;
+}
+
+/*Top info - avatar, username and date*/
 .top-info {
     color: #777;
     margin: 10px 10px 0;
@@ -22,30 +31,47 @@
 }
 
 .top-info h5 {
-    font-weight: 700;
     display: inline-block;
     vertical-align: middle;
     margin: 5px 0 0 5px;
+}
+
+.top-info > .pull-left h5 {
+    font-weight: 700;
 }
 
 .top-info h5:hover {
     color: #444;
 }
 
-.top-info span {
+.time-icon {
     vertical-align: middle;
     margin: 2px 0 0 5px;
     display: inline-block;
 }
 
-.photo-card img {
-    width: 100%;
+/*Like*/
+.like {
+    /*text-align: right;*/
+    font-weight: 400;
+    cursor: pointer;
+    margin-left: 60px;
 }
 
-.photo-card h4 {
-    color: #5d5d5d;
+.like > h2 {
+    margin-bottom: 0;
 }
 
-.photo-card p {
-    color: #5d5d5d;
+.thumb-up-liked {
+    color: #ff1503;
 }
+
+/*Bottom info - photo title and description*/
+.bottom-info {
+    padding: 10px;
+    text-align: left;
+}
+
+
+
+

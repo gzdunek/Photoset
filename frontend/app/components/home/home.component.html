@@ -9,8 +9,14 @@
                         <h5>{{photo.user.username}}</h5>
                     </div>
                     <div class="pull-right">
-                        <span class="glyphicon glyphicon-time"></span>
-                        <h5 class="pull-right">{{photo.creationTimestamp | date:'HH:mm, dd MMMM yyyy'}}</h5>
+                        <span class="glyphicon glyphicon-time time-icon"></span>
+                        <h5 class="pull-right">{{photo.creationTimestamp | date:'HH:mm, dd MMM yyyy'}}</h5>
+                        <div class="like" [ngClass]="{'thumb-up-liked': photo.liked}"
+                             (click)="likePhoto(photo)">
+                            <h2><span class="glyphicon glyphicon-thumbs-up"></span></h2>
+                            <p>Likes: {{photo.likesCount}}</p>
+                        </div>
+
                     </div>
                 </div>
                 <br>
@@ -22,3 +28,4 @@
         </div>
     </div>
 </div>
+<!--[ngClass]="{'aval': photo.likedByUsers | findUsername: properties.usernameFromLocalStorage}"-->

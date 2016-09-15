@@ -31,4 +31,12 @@ export class PhotoService {
     deleteImage(fileName: string) {
         return this.http.delete(this.properties.deleteImageUrl.concat('/' + fileName), {headers: this.properties.authHeader});
     }
+
+    giveLikeToPhoto(photo: Photo, user: User) {
+        return this.http.post(this.properties.addLikeToPhotoUrl.concat('/' + photo.id), user, {headers: this.properties.authHeader});
+    }
+
+    takeLikeFromPhoto(photo: Photo, user: User) {
+        return this.http.post(this.properties.undoLikeToPhotoUrl.concat('/' + photo.id), user, {headers: this.properties.authHeader});
+    }
 }
