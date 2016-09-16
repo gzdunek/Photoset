@@ -4,9 +4,11 @@
 
 import {Component} from "@angular/core";
 import {UserService} from "../../services/user.service";
+import {SearchService} from "../../services/search.service";
 
 @Component({
     selector: 'navbar',
+    providers: [SearchService],
     templateUrl: './app/components/navbar/navbar.component.html',
     styleUrls: ['styles.css', 'app/components/navbar/styles.css']
 })
@@ -17,4 +19,5 @@ export class NavbarComponent {
     logout() {
         this.userService.logout();
     }
+
 }

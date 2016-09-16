@@ -33,4 +33,6 @@ export class ApplicationProperties {
 
     public loginUserUrl: string = "http://localhost:8080/user/login";
 
+    public searchUserUrl: string = "http://localhost:8080/search/user";
+
 }

@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.model.User;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -13,4 +14,8 @@ public interface UserService {
     Optional<User> getByEmail(String email);
 
     Optional<User> getByUsername(String username);
+
+    List<User> getAll();
+
+    List<User> search(String term);
 }

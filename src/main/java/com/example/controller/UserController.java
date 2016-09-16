@@ -77,4 +77,5 @@ public class UserController {
                 .signWith(SignatureAlgorithm.HS256, "mykey")
                 .compact();
     }
+
 }

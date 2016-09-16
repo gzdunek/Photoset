@@ -60,9 +60,6 @@ export class HomeComponent implements OnInit {
         this.router.navigate(['/user', username]);
     }
 
-    navigateToUser(user: User) {
-        this.router.navigate(['/user', user.username]);
-    }
 
     likePhoto(photo: Photo) {
         if (this.userService.isLoggedIn) {

@@ -17,11 +17,13 @@ import {LoggedInGuard} from "./guards/logged-in.guard";
 import {EqualValidator} from "./validators/equal.validator";
 import {DetailUserComponent} from "./components/detail-user/detail-user.component";
 import {FindUsernameInListPipe} from "./pipes/find-username-in-list.pipe";
+import {AutoCompleteModule} from "primeng/components/autocomplete/autocomplete";
+import {SearchComponent} from "./components/search/search.component";
 @NgModule({
-    imports: [BrowserModule, routing, HttpModule, FormsModule],
+    imports: [BrowserModule, routing, HttpModule, FormsModule, AutoCompleteModule],
     providers: [UserService, LoggedInGuard, Title],
     declarations: [AppComponent, NavbarComponent, HomeComponent, AddPhotoComponent, UPLOAD_DIRECTIVES, RegisterUserComponent,
-        AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent, DetailUserComponent, FindUsernameInListPipe],
+        AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent, DetailUserComponent, FindUsernameInListPipe, SearchComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {

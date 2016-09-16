@@ -6,7 +6,9 @@ import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * Created on 08.09.2016.
@@ -35,5 +37,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public Optional<User> getByUsername(String username) {
         return userDao.findUserByUsername(username);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return userDao.findAll();
+    }
+
+    @Override
+    public List<User> search(String term) {
+        List<User> all = getAll();
+        return all.stream().filter(user -> user.getUsername().startsWith(term)).collect(Collectors.toList());
     }
 }

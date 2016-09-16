@@ -18,9 +18,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <div class="navbar-nav">
-                <form class="navbar-form">
-                    <input type="text" class="form-control" placeholder="Search">
-                </form>
+                <!--<form class="navbar-form" #navbarForm="ngForm">-->
+                <div class="navbar-form">
+                    <search></search>
+                </div>
+                <!--<input type="text" class="form-control" placeholder="Search" (keyup)="onKey($event)">-->
+
+                <!--</form>-->
             </div>
             <ul class="nav navbar-nav">
                 <li *ngIf="userService.isLoggedIn"><a routerLink="/add" class="nav-item">ADD PHOTO</a></li>
