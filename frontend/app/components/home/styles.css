@@ -18,7 +18,7 @@
 
 /*Top info - avatar, username and date*/
 .top-info {
-    color: #777;
+    color: #5d5d5d;
     margin: 10px 10px 0;
 }
 
@@ -37,11 +37,12 @@
 }
 
 .top-info > .pull-left h5 {
+    margin-top: 0;
     font-weight: 700;
 }
 
 .top-info h5:hover {
-    color: #444;
+    color: #222;
 }
 
 .time-icon {
@@ -58,6 +59,10 @@
     margin-left: 60px;
 }
 
+.like:hover {
+    color: lightcoral;
+}
+
 .like > h2 {
     margin-bottom: 0;
 }
@@ -72,6 +77,44 @@
     text-align: left;
 }
 
+/*Comment*/
+.comment {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
 
+.comment p {
+    display: inline;
+    margin-bottom: 0;
+}
 
+.comment > .username {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.comment > .username:hover {
+    color: #222;
+}
+
+/*Comment form*/
+.comment-form {
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+}
+
+.comment-form input {
+    padding-left: 10px;
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    height: 35px;
+    width: 100%;
+}
+
+.comment-form input:focus {
+    outline: none;
+}
 

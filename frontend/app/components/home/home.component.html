@@ -4,7 +4,8 @@
             <div class="photo-card" *ngFor="let photo of photos">
                 <img src="http://localhost:8080/images/{{photo.fileName}}">
                 <div class="top-info">
-                    <div class="pull-left" style="cursor: pointer" (click)="onSelect(photo.user)">
+                    <div class="pull-left" style="cursor: pointer"
+                         (click)="navigateToUserByUsername(photo.user.username)">
                         <img src="http://localhost:8080/images/{{photo.fileName}}">
                         <h5>{{photo.user.username}}</h5>
                     </div>
@@ -24,8 +25,18 @@
                     <h4>{{photo.title}}</h4>
                     <p>{{photo.description}}</p>
                 </div>
+                <div class="comment">
+                    <p class="content">Comments: {{photo.photoComments.length}}</p>
+                </div>
+                <div class="comment" *ngFor="let comment of photo.photoComments">
+                    <p class="username" (click)="navigateToUserByUsername(comment.username)">{{comment.username}}</p>
+                    <p class="content">{{comment.content}}</p>
+                </div>
+                <form class="comment-form" #commentForm="ngForm"
+                      (ngSubmit)="sendComment(photo, content.value); content.value=null">
+                    <input type="text" #content placeholder="Write a comment..." [disabled]="!userService.isLoggedIn">
+                </form>
             </div>
         </div>
     </div>
 </div>
-<!--[ngClass]="{'aval': photo.likedByUsers | findUsername: properties.usernameFromLocalStorage}"-->

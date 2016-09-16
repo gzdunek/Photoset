@@ -3,6 +3,7 @@
  */
 
 import {User} from "./user";
+import {PhotoComment} from "./photo-comment";
 
 export class Photo {
     id: number;
@@ -14,4 +15,5 @@ export class Photo {
     user: User;
     liked: boolean = false;
     likedByUsers: User[];
+    photoComments: PhotoComment[];
 }

@@ -1,5 +1,6 @@
 package com.example.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -35,6 +36,10 @@ public class Photo {
 
     @ManyToMany
     private List<User> likedByUsers;
+
+    @OneToMany(mappedBy = "photo")
+    @JsonManagedReference
+    private List<PhotoComment> photoComments;
 
 
     public Long getId() {
@@ -99,6 +104,14 @@ public class Photo {
 
     public void setLikedByUsers(List<User> likedByUsers) {
         this.likedByUsers = likedByUsers;
+    }
+
+    public List<PhotoComment> getPhotoComments() {
+        return photoComments;
+    }
+
+    public void setPhotoComments(List<PhotoComment> photoComments) {
+        this.photoComments = photoComments;
     }
 
     @Override
