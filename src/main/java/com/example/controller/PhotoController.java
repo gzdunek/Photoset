@@ -66,8 +66,13 @@ public class PhotoController {
     }
 
     @GetMapping("getByNewest")
-    public List<Photo> getByNewest() {
-        return photoService.getByNewest();
+    public List<Photo> getByNewest(@RequestParam Long limit) {
+        return photoService.getByNewest(limit);
+    }
+
+    @GetMapping("getPhotosByIdOfFirst")
+    public List<Photo> getPhotosByIdOfFirst(@RequestParam Long idOfFirst, @RequestParam Long limit) {
+        return photoService.getPhotosByIdOfFirst(idOfFirst, limit);
     }
 
 

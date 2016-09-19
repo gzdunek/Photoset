@@ -31,7 +31,10 @@ export class LoginUserComponent {
 
                 this.router.navigate(['']);
             },
-            error => console.log(error)
+            error => {
+                console.log(error);
+                alert(error);
+            }
         );
     }
 }

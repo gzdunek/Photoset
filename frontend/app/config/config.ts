@@ -15,6 +15,7 @@ export class ApplicationProperties {
     });
 
     public newestPhotosUrl: string = "http://localhost:8080/photo/getByNewest";
+    public byIdOfFirstPhotosUrl: string = "http://localhost:8080/photo/getPhotosByIdOfFirst";
     public photosByUserUrl: string = "http://localhost:8080/photo/getByUser";
     public uploadImageUrl: string = "http://localhost:8080/photo/upload";
     public deleteImageUrl: string = "http://localhost:8080/photo/delete";

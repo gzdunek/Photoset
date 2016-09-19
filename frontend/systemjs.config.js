@@ -25,7 +25,8 @@
             'rxjs': 'npm:rxjs',
             'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
             'ng2-uploader': 'npm:ng2-uploader',
-            'primeng': 'node_modules/primeng'
+            'primeng': 'node_modules/primeng',
+            'angular2-infinite-scroll': 'node_modules/angular2-infinite-scroll',
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -47,6 +48,10 @@
             'primeng': {
                 defaultExtension: 'js'
             },
+            'angular2-infinite-scroll': {
+                defaultExtension: 'js',
+                main: 'angular2-infinite-scroll.js'
+            }
         }
     });
 })(this);

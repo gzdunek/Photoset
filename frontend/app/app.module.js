@@ -30,12 +30,13 @@ var find_username_in_list_pipe_1 = require("./pipes/find-username-in-list.pipe")
 var autocomplete_1 = require("primeng/components/autocomplete/autocomplete");
 var search_component_1 = require("./components/search/search.component");
 var photo_card_component_1 = require("./components/photo-card/photo-card.component");
+var angular2_infinite_scroll_1 = require("angular2-infinite-scroll");
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule, forms_1.FormsModule, autocomplete_1.AutoCompleteModule],
+            imports: [platform_browser_1.BrowserModule, app_routing_1.routing, http_1.HttpModule, forms_1.FormsModule, autocomplete_1.AutoCompleteModule, angular2_infinite_scroll_1.InfiniteScrollModule],
             providers: [user_service_1.UserService, logged_in_guard_1.LoggedInGuard, platform_browser_1.Title],
             declarations: [app_component_1.AppComponent, navbar_component_1.NavbarComponent, home_component_1.HomeComponent, add_photo_component_1.AddPhotoComponent, ng2_uploader_1.UPLOAD_DIRECTIVES, register_user_component_1.RegisterUserComponent,
                 async_email_validator_1.AsyncEmailValidator, equal_validator_1.EqualValidator, async_username_validator_1.AsyncUsernameValidator, login_user_component_1.LoginUserComponent, detail_user_component_1.DetailUserComponent,

@@ -14,6 +14,6 @@ export class SearchService {
     }
 
     searchUser(term: string) {
-        return this.http.get(this.properties.searchUserUrl.concat("/" + term), {headers: this.properties.jsonHeader});
+        return this.http.get(this.properties.searchUserUrl.concat("/" + term), {headers: this.properties.jsonHeader}).map(res => res.json());
     }
 }

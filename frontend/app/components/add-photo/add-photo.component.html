@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6 col-centered">
             <h3 class="top-title">Add your own photo!</h3>
-            <form (ngSubmit)="onSubmit()" autocomplete="off" #addForm="ngForm">
+            <form autocomplete="off" #addForm="ngForm">
                 <div class="form-group">
                     <input type="text" class="form-control" id="photoTitle" placeholder="Title"
                            [(ngModel)]="photo.title" name="title" required maxlength="100">
@@ -16,9 +16,8 @@
                         <span class="glyphicon glyphicon-camera"></span> Browse for image
                         <input type="file" ngFileSelect [options]="basicOptions"
                                (onUpload)="handleUpload($event)" (onPreviewData)="handlePreviewData($event)"
-                               id="uploadImage" required/>
+                               id="uploadImage" [(ngModel)]="input" name="input" required/>
                     </div>
-
 
                     <div class="imageContainer" *ngIf="imageSelected">
                         <div class="divOnImage">
@@ -28,7 +27,8 @@
                         <p>Progress: {{ progress }}%</p>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-default submitButton" [disabled]="!addForm.form.valid">Submit
+                <button type="submit" class="btn btn-default submitButton"
+                        [disabled]="!(addForm.form.valid && imageSelected)" (click)="onSubmit()">Submit
                 </button>
             </form>
         </div>

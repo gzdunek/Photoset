@@ -3,7 +3,7 @@
  */
 
 import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
+import {Http, URLSearchParams} from "@angular/http";
 import {ApplicationProperties} from "../config/config";
 import {Photo} from "../models/photo";
 import {User} from "../models/user";
@@ -16,16 +16,31 @@ export class PhotoService {
     constructor(private http: Http) {
     }
 
-    getByNewest() {
-        return this.http.get(this.properties.newestPhotosUrl, {headers: this.properties.jsonHeader});
+    getByNewest(limit: number) {
+        let params = new URLSearchParams();
+        params.set("limit", limit.toString());
+        return this.http.get(this.properties.newestPhotosUrl, {
+            search: params,
+            headers: this.properties.jsonHeader
+        }).map(res => res.json());
+    }
+
+    getPhotosByIdOfFirst(idOfFirst: number, limit: number) {
+        let params = new URLSearchParams();
+        params.set("limit", limit.toString());
+        params.set("idOfFirst", idOfFirst.toString());
+        return this.http.get(this.properties.byIdOfFirstPhotosUrl, {
+            search: params,
+            headers: this.properties.jsonHeader
+        }).map(res => res.json());
     }
 
     getByUser(user: User) {
-        return this.http.get(this.properties.photosByUserUrl.concat('/' + user.username), {headers: this.properties.jsonHeader});
+        return this.http.get(this.properties.photosByUserUrl.concat('/' + user.username), {headers: this.properties.jsonHeader}).map(res => res.json());
     }
 
     add(photo: Photo) {
-        return this.http.post(this.properties.addPhotoUrl, photo, {headers: this.properties.authHeader});
+        return this.http.post(this.properties.addPhotoUrl, photo, {headers: this.properties.authHeader}).map(res => res.json());
     }
 
     deleteImage(fileName: string) {

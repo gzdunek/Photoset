@@ -20,8 +20,9 @@ import {FindUsernameInListPipe} from "./pipes/find-username-in-list.pipe";
 import {AutoCompleteModule} from "primeng/components/autocomplete/autocomplete";
 import {SearchComponent} from "./components/search/search.component";
 import {PhotoCardComponent} from "./components/photo-card/photo-card.component";
+import {InfiniteScrollModule} from "angular2-infinite-scroll";
 @NgModule({
-    imports: [BrowserModule, routing, HttpModule, FormsModule, AutoCompleteModule],
+    imports: [BrowserModule, routing, HttpModule, FormsModule, AutoCompleteModule, InfiniteScrollModule],
     providers: [UserService, LoggedInGuard, Title],
     declarations: [AppComponent, NavbarComponent, HomeComponent, AddPhotoComponent, UPLOAD_DIRECTIVES, RegisterUserComponent,
         AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent, DetailUserComponent,

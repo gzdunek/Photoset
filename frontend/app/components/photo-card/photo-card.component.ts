@@ -13,7 +13,7 @@ import {ApplicationProperties} from "../../config/config";
 import {User} from "../../models/user";
 @Component({
     selector: 'photo-card',
-    provider: [PhotoCommentService, PhotoService],
+    providers: [PhotoCommentService, PhotoService],
     templateUrl: './app/components/photo-card/photo-card.component.html',
     styleUrls: ['styles.css', 'app/components/photo-card/styles.css']
 })
@@ -62,7 +62,7 @@ export class PhotoCardComponent {
         if (content.length != 0)
             this.commentService.add(comment).subscribe(() => {
                 this.commentService.getByPhotoId(photo.id).subscribe(comments => {
-                    this.photo.photoComments = JSON.parse(JSON.parse(JSON.stringify(comments))._body);
+                    this.photo.photoComments = comments;
                 });
             });
     }

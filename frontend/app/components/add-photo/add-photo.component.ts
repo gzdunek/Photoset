@@ -19,11 +19,11 @@ export class AddPhotoComponent implements OnInit {
     private zone: NgZone;
     private basicOptions: Object;
     private progress: number = 0;
-    // private response: any = {};
     private previewData: any;
     private imageSelected: boolean = false;
     private fileName: string;
     private photo: Photo = new Photo();
+    private input: any;
 
     private properties: ApplicationProperties = new ApplicationProperties();
 
@@ -44,7 +44,6 @@ export class AddPhotoComponent implements OnInit {
     handleUpload(data: any): void {
         this.zone.run(()=> {
             this.imageSelected = true;
-            // this.response = data;
             this.progress = data.progress.percent;
             this.fileName = data.response;
             this.photo.fileName = this.fileName;
@@ -57,7 +56,7 @@ export class AddPhotoComponent implements OnInit {
 
     onSubmit() {
         this.userService.getUserByUsername(this.properties.usernameFromLocalStorage).subscribe(user => {
-            this.photo.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
+            this.photo.user = user;
             this.photoService.add(this.photo).subscribe(() => {
                 alert("Added!");
                 this.router.navigate(['']);
@@ -72,6 +71,7 @@ export class AddPhotoComponent implements OnInit {
             this.progress = 0;
             this.imageSelected = false;
             this.previewData = null;
+            this.input = null;
         });
     }
 }

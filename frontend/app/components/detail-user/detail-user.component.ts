@@ -12,6 +12,7 @@ import {PhotoService} from "../../services/photo.service";
 import {Title} from "@angular/platform-browser";
 import {ApplicationProperties} from "../../config/config";
 import {PhotoCommentService} from "../../services/photo-comment.service";
+import {FindUsernameInListPipe} from "../../pipes/find-username-in-list.pipe";
 
 @Component({
     selector: 'detail-user',
@@ -23,7 +24,7 @@ export class DetailUserComponent implements OnInit {
     private sub: Subscription;
     private user: User = new User();
     private loggedUser: User = new User();
-    private photos: Photo[];
+    private photos: Photo[] = null;
 
     private properties = new ApplicationProperties();
 
@@ -33,27 +34,30 @@ export class DetailUserComponent implements OnInit {
     receiveLoggedUser() {
         if (this.userService.isLoggedIn)
             this.userService.getUserByUsername(this.properties.usernameFromLocalStorage).subscribe(receivedUser => {
-                this.user = JSON.parse(JSON.parse(JSON.stringify(receivedUser))._body);
+                this.loggedUser = receivedUser;
             });
     }
 
     receivePhotosByUsername(name: string) {
         this.title.setTitle(name + ' profile');
         this.userService.getUserByUsername(name).subscribe(user => {
-            this.user = JSON.parse(JSON.parse(JSON.stringify(user))._body);
+            this.user = user;
             this.photoService.getByUser(this.user).subscribe(photos => {
-                this.photos = JSON.parse(JSON.parse(JSON.stringify(photos))._body);
+                this.photos = photos;
+                for (let i = 0; i < this.photos.length; i++)
+                    this.photos[i].liked = new FindUsernameInListPipe().transform(this.photos[i].likedByUsers, this.properties.usernameFromLocalStorage);
             });
         });
     }
 
     ngOnInit(): void {
+        this.receiveLoggedUser();
         this.sub = this.route.params.subscribe(params => {
             let name = params['name'];
             this.receivePhotosByUsername(name);
         });
 
-        this.receiveLoggedUser();
+
     }
 
     ngOnDestroy() {

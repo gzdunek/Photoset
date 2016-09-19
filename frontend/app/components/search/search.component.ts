@@ -20,11 +20,11 @@ export class SearchComponent {
 
     search(event) {
         this.searchService.searchUser(event.query).subscribe(users => {
-            this.results = JSON.parse(JSON.parse(JSON.stringify(users))._body);
+            this.results = users;
         });
     }
 
     navigateToUserByUsername(username: string) {
-        this.router.navigate(['/loggedUser', username]);
+        this.router.navigate(['/user', username]);
     }
 }

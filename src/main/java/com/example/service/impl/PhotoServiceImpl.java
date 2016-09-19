@@ -7,6 +7,7 @@ import com.example.service.PhotoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created on 09.09.2016.
@@ -22,10 +23,15 @@ public class PhotoServiceImpl implements PhotoService {
     }
 
     @Override
-    public List<Photo> getByNewest() {
+    public List<Photo> getByNewest(Long limit) {
         List<Photo> allPhotos = (List<Photo>) photoDao.findAll();
-        allPhotos.sort((o1, o2) -> o2.getCreationTimestamp().compareTo(o1.getCreationTimestamp()));
-        return allPhotos;
+        return allPhotos
+                .stream()
+                .sorted((o1, o2) -> o2.getCreationTimestamp().compareTo(o1.getCreationTimestamp()))
+                .limit(limit)
+                .collect(Collectors.toList());
+//        allPhotos.sort((o1, o2) -> o2.getCreationTimestamp().compareTo(o1.getCreationTimestamp()));
+//        return allPhotos;
     }
 
     @Override
@@ -41,5 +47,19 @@ public class PhotoServiceImpl implements PhotoService {
     @Override
     public Photo getPhotoById(Long photoId) {
         return photoDao.findOne(photoId);
+    }
+
+    @Override
+    public List<Photo> getPhotosByIdOfFirst(Long idOfFirst, Long limit) {
+        Photo first = photoDao.findOne(idOfFirst);
+
+        List<Photo> all = (List<Photo>) photoDao.findAll();
+
+        return all
+                .stream()
+                .filter(photo -> photo.getCreationTimestamp().compareTo(first.getCreationTimestamp()) < 0)
+                .sorted((o1, o2) -> o2.getCreationTimestamp().compareTo(o1.getCreationTimestamp()))
+                .limit(limit)
+                .collect(Collectors.toList());
     }
 }

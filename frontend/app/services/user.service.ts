@@ -30,11 +30,11 @@ export class UserService {
     }
 
     getUserByUsername(username: string) {
-        return this.http.post(this.properties.getUserByUsernameUrl, username, {headers: this.properties.jsonHeader});
+        return this.http.post(this.properties.getUserByUsernameUrl, username, {headers: this.properties.jsonHeader}).map(res => res.json());
     }
 
     register(user: User) {
-        return this.http.post(this.properties.registerUserUrl, user, {headers: this.properties.jsonHeader});
+        return this.http.post(this.properties.registerUserUrl, user, {headers: this.properties.jsonHeader}).map(res => res.json());
     }
 
     login(model: {username: string; password: string}) {

@@ -19,7 +19,7 @@ export class PhotoCommentService {
     }
 
     getByPhotoId(id: number) {
-        return this.http.get(this.properties.getCommentsByPhotoIdUrl.concat('/' + id), {headers: this.properties.jsonHeader});
+        return this.http.get(this.properties.getCommentsByPhotoIdUrl.concat('/' + id), {headers: this.properties.jsonHeader}).map(res => res.json());
     }
 
 }
