@@ -19,11 +19,13 @@ import {DetailUserComponent} from "./components/detail-user/detail-user.componen
 import {FindUsernameInListPipe} from "./pipes/find-username-in-list.pipe";
 import {AutoCompleteModule} from "primeng/components/autocomplete/autocomplete";
 import {SearchComponent} from "./components/search/search.component";
+import {PhotoCardComponent} from "./components/photo-card/photo-card.component";
 @NgModule({
     imports: [BrowserModule, routing, HttpModule, FormsModule, AutoCompleteModule],
     providers: [UserService, LoggedInGuard, Title],
     declarations: [AppComponent, NavbarComponent, HomeComponent, AddPhotoComponent, UPLOAD_DIRECTIVES, RegisterUserComponent,
-        AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent, DetailUserComponent, FindUsernameInListPipe, SearchComponent],
+        AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent, DetailUserComponent,
+        FindUsernameInListPipe, SearchComponent, PhotoCardComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {

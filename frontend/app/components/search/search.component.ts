@@ -25,6 +25,6 @@ export class SearchComponent {
     }
 
     navigateToUserByUsername(username: string) {
-        this.router.navigate(['/user', username]);
+        this.router.navigate(['/loggedUser', username]);
     }
 }
