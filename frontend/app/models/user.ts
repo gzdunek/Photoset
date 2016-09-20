@@ -9,6 +9,7 @@ export class User {
     email: string;
     username: string;
     password: string;
+    avatarFileName: string;
     creationTimestamp: Date;
     photos: Photo[];
 }

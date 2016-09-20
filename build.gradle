@@ -32,5 +32,6 @@ dependencies {
 //	compile('org.springframework.boot:spring-boot-starter-security')
 	compile 'io.jsonwebtoken:jjwt:0.7.0'
 	runtime('mysql:mysql-connector-java')
+	compile group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

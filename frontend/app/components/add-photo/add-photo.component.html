@@ -16,7 +16,7 @@
                         <span class="glyphicon glyphicon-camera"></span> Browse for image
                         <input type="file" ngFileSelect [options]="basicOptions"
                                (onUpload)="handleUpload($event)" (onPreviewData)="handlePreviewData($event)"
-                               id="uploadImage" [(ngModel)]="input" name="input" required/>
+                               id="uploadImage" [(ngModel)]="input" name="input"/>
                     </div>
 
                     <div class="imageContainer" *ngIf="imageSelected">

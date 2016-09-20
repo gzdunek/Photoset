@@ -3,7 +3,7 @@
     <div class="top-info">
         <div class="pull-left" style="cursor: pointer"
              (click)="navigateToUserByUsername(photo.user.username)">
-            <img src="http://localhost:8080/images/{{photo.fileName}}">
+            <img src="http://localhost:8080/images/{{photo.user.avatarFileName}}">
             <h5>{{photo.user.username}}</h5>
         </div>
         <div class="pull-right">

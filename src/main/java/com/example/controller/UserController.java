@@ -63,6 +63,8 @@ public class UserController {
 
         if (userService.getByUsername(username).isPresent())
             user = userService.getByUsername(username).get();
+//        else if(userService.getByEmail(username).isPresent())
+//            user = userService.getByEmail(username).get();
         else
             throw new ServletException("User not exists");
 

@@ -27,6 +27,9 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Column
+    private String avatarFileName;
+
     @CreationTimestamp
     private Timestamp creationTimestamp;
 
@@ -65,6 +68,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getAvatarFileName() {
+        return avatarFileName;
+    }
+
+    public void setAvatarFileName(String avatarFileName) {
+        this.avatarFileName = avatarFileName;
     }
 
     public Timestamp getCreationTimestamp() {

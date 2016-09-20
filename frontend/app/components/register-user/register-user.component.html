@@ -44,6 +44,23 @@
                     <p>Password and confirm password have to be equal</p>
                 </div>
 
+                <div class="form-group">
+                    <div class="btn btn-primary btn-file">
+                        <span class="glyphicon glyphicon-camera"></span> Browse for avatar
+                        <input type="file" ngFileSelect [options]="basicOptions"
+                               (onUpload)="handleUpload($event)" (onPreviewData)="handlePreviewData($event)"
+                               id="uploadAvatar" [(ngModel)]="input" name="input"/>
+                    </div>
+
+                    <div class="imageContainer" *ngIf="imageSelected">
+                        <div class="divOnImage">
+                            <button class="glyphicon glyphicon-remove removeImage" (click)="deleteImage()"></button>
+                        </div>
+                        <img [src]="previewData" alt="Preview Data" class="preview-img" style="width: 100%">
+                        <p>Progress: {{ progress }}%</p>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-default submitButton" [disabled]="!registerForm.form.valid">Submit
                 </button>
             </form>
