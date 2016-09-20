@@ -1,13 +1,20 @@
 package com.example;
 
 import com.example.config.JwtFilter;
+import javafx.application.Application;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class PhotosetApplication {
+public class PhotosetApplication extends SpringBootServletInitializer {
+
+    public static void main(String[] args) {
+        SpringApplication.run(PhotosetApplication.class, args);
+    }
 
     @Bean
     public FilterRegistrationBean jwtFilter() {
@@ -18,7 +25,8 @@ public class PhotosetApplication {
         return registration;
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(PhotosetApplication.class, args);
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
     }
 }
