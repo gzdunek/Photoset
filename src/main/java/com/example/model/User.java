@@ -46,6 +46,7 @@ public class User {
         this.id = id;
     }
 
+    @JsonIgnore
     public String getEmail() {
         return email;
     }
@@ -62,6 +63,7 @@ public class User {
         this.username = username;
     }
 
+    @JsonIgnore
     public String getPassword() {
         return password;
     }

@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 col-centered">
+      <div class="info">
+        <img src="http://s3-us-west-2.amazonaws.com/photoset-images/{{user.avatarFileName}}">
+        <div class="text-info">
+          <h3>{{user.username}}</h3>
+          <p>Joined at {{user.creationTimestamp | date:'dd MMMM yyyy'}}</p>
+        </div>
+
+      </div>
+      <h3 class="top-title">Photos</h3>
+      <photo-card *ngFor="let photo of photos" [photo]="photo" [loggedUser]="loggedUser"></photo-card>
+    </div>
+  </div>
+</div>

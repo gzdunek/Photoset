@@ -1,0 +1,9 @@
+<p-autoComplete [(ngModel)]="user" [suggestions]="results" (completeMethod)="search($event)"
+                field="username" placeholder="Search" (onSelect)="navigateToUserByUsername(user.username); user=null">
+  <template let-user>
+    <div class="ui-helper-clearfix">
+      <img src="http://s3-us-west-2.amazonaws.com/photoset-images/{{user.avatarFileName}}"/>
+      <h5>{{user.username}}</h5>
+    </div>
+  </template>
+</p-autoComplete>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" routerLink="/home">
+        <!----smial size logo-------->
+        <img src="http://s3-us-west-2.amazonaws.com/photoset-images/logo.png" alt="logo">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <div class="navbar-nav">
+        <!--<form class="navbar-form" #navbarForm="ngForm">-->
+        <div class="navbar-form">
+          <search></search>
+        </div>
+        <!--<input type="text" class="form-control" placeholder="Search" (keyup)="onKey($event)">-->
+
+        <!--</form>-->
+      </div>
+      <ul class="nav navbar-nav">
+        <li *ngIf="userService.isLoggedIn"><a routerLink="/add" class="nav-item">ADD PHOTO</a></li>
+        <li *ngIf="!userService.isLoggedIn"><a routerLink="/login" class="nav-item">LOGIN</a></li>
+        <li *ngIf="!userService.isLoggedIn"><a routerLink="/register" class="nav-item">REGISTER</a></li>
+        <li *ngIf="userService.isLoggedIn"><a (click)="logout()" class="nav-item"
+                                              style="cursor: pointer">LOGOUT</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

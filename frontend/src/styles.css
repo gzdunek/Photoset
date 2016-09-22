@@ -1,0 +1,123 @@
+/* Master Styles */
+.body {
+    /*background: url("http://localhost:8080/images/bg.jpg") fixed ;*/
+    background-color: #f8f8f8;
+    padding-top: 70px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.col-centered {
+    padding: 15px;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*Forms*/
+.form-control {
+    height: 35px;
+    /*background-color: #f9f9f9;*/
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  outline: none;
+    color: #5d5d5d;
+}
+
+.form-control:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+
+.submitButton {
+    font-weight: 700;
+    border-radius: 0;
+    border: 3px solid #5d5d5d;
+    text-transform: uppercase;
+    color: #5d5d5d;
+    background-color: white;
+}
+
+/*Title of page below navbar*/
+.top-title {
+    text-transform: uppercase;
+    color: #777;
+    margin-top: 0;
+}
+
+/*Search*/
+.ui-autocomplete input {
+    background-color: #f9f9f9;
+    height: 35px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    color: #5d5d5d;
+}
+
+.ui-autocomplete:focus {
+    outline: none;
+}
+
+.ui-autocomplete-panel {
+    padding: 0;
+    background-color: white;
+    border: none;
+}
+
+.ui-shadow {
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    -khtml-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    -khtml-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -khtml-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    -khtml-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: lightcoral;
+}
+
+.ui-widget {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.ui-inputtext.ui-state-focus, .ui-widget-content .ui-inputtext.ui-state-focus, .ui-widget-header .ui-inputtext.ui-state-focus {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}

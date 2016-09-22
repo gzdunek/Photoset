@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7 col-centered" infinite-scroll [infiniteScrollDistance]="1" (scrolled)="scrolledDown()"
+         [infiniteScrollDisabled]="infiniteScrollDisabled">
+      <div *ngFor="let photo of photos">
+        <photo-card [photo]="photo" [loggedUser]="loggedUser"></photo-card>
+      </div>
+    </div>
+  </div>
+</div>

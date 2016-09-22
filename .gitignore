@@ -7,3 +7,7 @@
 *.iml
 build
 /frontend/node_modules/
+
+# compiled output
+/frontend/dist
+/frontend/tmp
