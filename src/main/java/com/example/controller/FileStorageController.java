@@ -23,7 +23,6 @@ public class FileStorageController {
 
     private final FileStorageService storageService;
 
-    AWSCredentials credentials = new BasicAWSCredentials("AKIAJG4VUHYO56LKMMGA", "mh7fIp1PoY9QRb60ajs+8gqyX0hvqNwkmKQ6u/Tt");
 
     public FileStorageController(FileStorageService storageService) {
         this.storageService = storageService;
