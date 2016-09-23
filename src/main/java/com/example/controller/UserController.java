@@ -5,7 +5,10 @@ import com.example.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.ServletException;
 import java.util.Date;
@@ -26,8 +29,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("getByEmail/{email}")
-    public User getByEmail(@PathVariable String email) {
+    @PostMapping("getByEmail")
+    public User getByEmail(@RequestBody String email) {
         return userService.getByEmail(email).orElse(null);
     }
 
@@ -53,16 +56,16 @@ public class UserController {
 
     @PostMapping("login")
     public String login(@RequestBody Map<String, String> json) throws ServletException {
-        String username = json.get("username");
+        String email = json.get("email");
         String password = json.get("password");
 
-        if (username == null || password == null)
+        if (email == null || password == null)
             throw new ServletException("Please fill in username and password fields");
 
         User user;
 
-        if (userService.getByUsername(username).isPresent())
-            user = userService.getByUsername(username).get();
+        if (userService.getByEmail(email).isPresent())
+            user = userService.getByEmail(email).get();
 //        else if(userService.getByEmail(username).isPresent())
 //            user = userService.getByEmail(username).get();
         else
@@ -74,7 +77,7 @@ public class UserController {
             throw new ServletException("Invalid password");
 
         return Jwts.builder()
-                .setSubject(username)
+                .setSubject(email)
                 .setIssuedAt(new Date())
                 .signWith(SignatureAlgorithm.HS256, "mykey")
                 .compact();

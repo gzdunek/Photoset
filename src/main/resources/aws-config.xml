@@ -7,7 +7,7 @@
 						   http://www.springframework.org/schema/cloud/aws/context/spring-cloud-aws-context-1.0.xsd">
 
     <aws-context:context-credentials>
-        <aws-context:simple-credentials access-key="${accessKey}" secret-key="${secretKey}"/>
+        <aws-context:simple-credentials access-key="${ACCESS_KEY}" secret-key="${SECRET_KEY}"/>
     </aws-context:context-credentials>
 
     <aws-context:context-resource-loader/>

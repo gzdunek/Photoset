@@ -58,7 +58,6 @@ export class AddPhotoComponent implements OnInit {
     this.userService.getUserByUsername(this.properties.usernameFromLocalStorage).subscribe(user => {
       this.photo.user = user;
       this.photoService.add(this.photo).subscribe(() => {
-        alert("Added!");
         this.router.navigate(['']);
       });
     });

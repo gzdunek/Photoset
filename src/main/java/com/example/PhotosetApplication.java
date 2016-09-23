@@ -19,8 +19,9 @@ public class PhotosetApplication extends SpringBootServletInitializer {
     public FilterRegistrationBean jwtFilter() {
         final FilterRegistrationBean registration = new FilterRegistrationBean();
         registration.setFilter(new JwtFilter());
-        registration.addUrlPatterns("/photo/add/");
-        registration.addUrlPatterns("/photo/upload/");
+        registration.addUrlPatterns("/photo/add");
+        registration.addUrlPatterns("/like/*");
+        registration.addUrlPatterns("/comment/add");
         return registration;
     }
 

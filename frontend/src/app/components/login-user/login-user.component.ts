@@ -13,7 +13,7 @@ import {Title} from "@angular/platform-browser";
   styleUrls: ['./login-user.component.css']
 })
 export class LoginUserComponent {
-  private model = {'username': '', 'password': ''};
+  private model = {'email': '', 'password': ''};
 
   constructor(private userService: UserService, private router: Router, private title: Title) {
     this.title.setTitle("Login");
@@ -22,14 +22,17 @@ export class LoginUserComponent {
   private onSubmit() {
     this.userService.login(this.model).subscribe(response => {
         localStorage.setItem("token", JSON.parse(JSON.stringify(response))._body);
-        localStorage.setItem("currentUsername", this.model.username);
 
-        this.model.username = '';
-        this.model.password = '';
+        this.userService.getUserByEmail(this.model.email).subscribe(user => {
+          localStorage.setItem("currentUsername", user.username);
 
-        this.userService.isLoggedIn = true;
+          this.model.email = '';
+          this.model.password = '';
 
-        this.router.navigate(['']);
+          this.userService.isLoggedIn = true;
+
+          this.router.navigate(['/home']);
+        });
       },
       error => {
         console.log(error);

@@ -1,9 +1,9 @@
 <div class="photo-card">
-  <img src="http://s3-us-west-2.amazonaws.com/photoset-images/{{photo.fileName}}">
+  <img src="http://s3-eu-west-1.amazonaws.com/photoset-image/{{photo.fileName}}">
   <div class="top-info">
     <div class="pull-left" style="cursor: pointer"
          (click)="navigateToUserByUsername(photo.user.username)">
-      <img src="http://s3-us-west-2.amazonaws.com/photoset-images/{{photo.user.avatarFileName}}">
+      <img src="http://s3-eu-west-1.amazonaws.com/photoset-image/{{photo.user.avatarFileName}}">
       <h5>{{photo.user.username}}</h5>
     </div>
     <div class="pull-right">

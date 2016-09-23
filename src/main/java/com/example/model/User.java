@@ -1,6 +1,7 @@
 package com.example.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -18,12 +19,14 @@ public class User {
     @GeneratedValue
     private Long id;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     private String email;
 
     @Column(nullable = false)
     private String username;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     private String password;
 
@@ -46,7 +49,6 @@ public class User {
         this.id = id;
     }
 
-    @JsonIgnore
     public String getEmail() {
         return email;
     }
@@ -63,7 +65,6 @@ public class User {
         this.username = username;
     }
 
-    @JsonIgnore
     public String getPassword() {
         return password;
     }

@@ -33,11 +33,15 @@ export class UserService {
     return this.http.post(this.properties.getUserByUsernameUrl, username, {headers: this.properties.jsonHeader}).map(res => res.json());
   }
 
+  getUserByEmail(email: string) {
+    return this.http.post(this.properties.getUserByEmailUrl, email, {headers: this.properties.jsonHeader}).map(res => res.json());
+  }
+
   register(user: User) {
     return this.http.post(this.properties.registerUserUrl, user, {headers: this.properties.jsonHeader}).map(res => res.json());
   }
 
-  login(model: {username: string; password: string}) {
+  login(model: {email: string; password: string}) {
     return this.http.post(this.properties.loginUserUrl, JSON.stringify(model), {headers: this.properties.jsonHeader});
   }
 
@@ -45,4 +49,5 @@ export class UserService {
     localStorage.clear();
     this.isLoggedIn = false;
   }
+
 }

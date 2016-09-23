@@ -2,7 +2,7 @@
                 field="username" placeholder="Search" (onSelect)="navigateToUserByUsername(user.username); user=null">
   <template let-user>
     <div class="ui-helper-clearfix">
-      <img src="http://s3-us-west-2.amazonaws.com/photoset-images/{{user.avatarFileName}}"/>
+      <img src="http://s3-eu-west-1.amazonaws.com/photoset-image/{{user.avatarFileName}}"/>
       <h5>{{user.username}}</h5>
     </div>
   </template>

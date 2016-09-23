@@ -12,7 +12,7 @@
                  [(ngModel)]="photo.description" name="description">
         </div>
         <div class="form-group">
-          <div class="btn btn-primary btn-file" *ngIf="!imageSelected">
+          <div class="btn btn-primary btn-file">
             <span class="glyphicon glyphicon-camera"></span> Browse for image
             <input type="file" accept="image/jpeg,image/png" ngFileSelect [options]="basicOptions"
                    (onUpload)="handleUpload($event)" (onPreviewData)="handlePreviewData($event)"
@@ -28,7 +28,7 @@
           </div>
         </div>
         <button type="submit" class="btn btn-default submitButton"
-                [disabled]="!(addForm.form.valid && imageSelected)" (click)="onSubmit()">Submit
+                [disabled]="!(addForm.form.valid && imageSelected && progress == 100)" (click)="onSubmit()">Submit
         </button>
       </form>
     </div>

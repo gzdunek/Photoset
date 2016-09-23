@@ -44,10 +44,10 @@
           <p>Password and confirm password have to be equal</p>
         </div>
 
-        <div class="form-group" *ngIf="!imageSelected">
+        <div class="form-group">
           <div class="btn btn-primary btn-file">
             <span class="glyphicon glyphicon-camera"></span> Browse for avatar
-            <input type="file" accept="image/jpeg,image/png" ngFileSelect [options]="basicOptions"
+            <input type="file" ngFileSelect [options]="basicOptions"
                    (onUpload)="handleUpload($event)" (onPreviewData)="handlePreviewData($event)"
                    id="uploadAvatar" [(ngModel)]="input" name="input"/>
           </div>
@@ -62,7 +62,7 @@
         </div>
 
         <button type="submit" class="btn btn-default submitButton"
-                [disabled]="!(registerForm.form.valid && imageSelected)">Submit
+                [disabled]="!(registerForm.form.valid && imageSelected && progress == 100)">Submit
         </button>
       </form>
     </div>

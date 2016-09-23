@@ -5,18 +5,18 @@ package com.example.helper;
 
 import net.coobird.thumbnailator.Thumbnails;
 
-import java.io.File;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class ImageConverter {
 
-    public File resizeAndConvert(File file, int width, String format) throws IOException {
-        File output;
-        Thumbnails.of(file)
+    public BufferedImage resizeAndConvert(BufferedImage image, int width, String format) throws IOException {
+
+        return Thumbnails.of(image)
                 .size(width, width)
                 .outputFormat(format)
                 .outputQuality(0.8)
-                .toFile(output = new File(file.getName()));
-        return output;
+                .allowOverwrite(true)
+                .asBufferedImage();
     }
 }

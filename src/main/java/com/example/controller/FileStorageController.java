@@ -1,7 +1,5 @@
 package com.example.controller;
 
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
 import com.example.service.FileStorageService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,8 +16,6 @@ import java.util.Iterator;
 @RestController
 @RequestMapping("storage")
 public class FileStorageController {
-
-//    private final String path = new File("src/main/resources/public/images").getAbsolutePath();
 
     private final FileStorageService storageService;
 

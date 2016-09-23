@@ -19,11 +19,13 @@ import {PhotoCommentService} from "../../services/photo-comment.service";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  photos: Photo[] = null;
+  photos: Photo[];
   private loggedUser = new User();
 
   private properties = new ApplicationProperties();
   private infiniteScrollDisabled: boolean;
+
+  private IMAGES_TO_LOAD_COUNT: number = 8;
 
   constructor(private photoService: PhotoService, private userService: UserService, private title: Title) {
     this.title.setTitle("photo{set}");
@@ -35,14 +37,15 @@ export class HomeComponent implements OnInit {
   }
 
   receiveLoggedUser() {
-    if (this.userService.isLoggedIn)
+    if (this.userService.isLoggedIn) {
       this.userService.getUserByUsername(this.properties.usernameFromLocalStorage).subscribe(receivedUser => {
         this.loggedUser = receivedUser;
       });
+    }
   }
 
   receivePhotosData() {
-    this.photoService.getByNewest(3).subscribe(photos => {
+    this.photoService.getByNewest(this.IMAGES_TO_LOAD_COUNT).subscribe(photos => {
       this.photos = photos;
 
       // Check if our username is on the list of users who liked the photo, we check in this way every image on page
@@ -55,7 +58,7 @@ export class HomeComponent implements OnInit {
   scrolledDown() {
     let index = this.photos.length - 1;
 
-    this.photoService.getPhotosByIdOfFirst(this.photos[index].id, 3).subscribe(receivedPhotos => {
+    this.photoService.getPhotosByIdOfFirst(this.photos[index].id, this.IMAGES_TO_LOAD_COUNT).subscribe(receivedPhotos => {
       if (receivedPhotos.length == 0)
         this.infiniteScrollDisabled = true;
       else {
