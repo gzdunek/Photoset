@@ -1,13 +1,14 @@
 /**
  * Created on 10.09.2016.
  */
-import {Component, OnInit, NgZone} from "@angular/core";
+import {Component, OnInit, NgZone, Inject} from "@angular/core";
 import {ApplicationProperties} from "../../config/config";
 import {Photo} from "../../models/photo";
 import {PhotoService} from "../../services/photo.service";
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {Title} from "@angular/platform-browser";
+import {NgUploaderOptions} from "ngx-uploader";
 
 @Component({
   selector: 'add-photo',
@@ -16,38 +17,53 @@ import {Title} from "@angular/platform-browser";
   styleUrls: ['./add-photo.component.css']
 })
 export class AddPhotoComponent implements OnInit {
-  private zone: NgZone;
-  private basicOptions: Object;
+  private basicOptions: NgUploaderOptions;
   private progress: number = 0;
   private previewData: any;
   private imageSelected: boolean = false;
   private fileName: string;
   private photo: Photo = new Photo();
   private input: any;
+  private response: any;
 
   private properties: ApplicationProperties = new ApplicationProperties();
+  private sizeLimit: number = 7000000;
 
 
-  constructor(private userService: UserService, private photoService: PhotoService, private router: Router, private title: Title) {
+  constructor(@Inject(NgZone) private zone: NgZone, private userService: UserService, private photoService: PhotoService, private router: Router, private title: Title) {
     this.title.setTitle("Add photo");
   }
 
   ngOnInit(): void {
-    this.zone = new NgZone({enableLongStackTrace: false});
-    this.basicOptions = {
+    this.basicOptions = new NgUploaderOptions({
       url: this.properties.uploadImageUrl,
-      allowedExtensions: ['image/jpg'],
-      previewUrl: true
-    };
+      filterExtensions: true,
+      allowedExtensions: ['jpg', 'png'],
+      previewUrl: true,
+      autoUpload: true
+    });
   }
 
   handleUpload(data: any): void {
-    this.zone.run(()=> {
-      this.imageSelected = true;
-      this.progress = data.progress.percent;
-      this.fileName = data.response;
-      this.photo.fileName = this.fileName;
+    setTimeout(() => {
+      this.zone.run(() => {
+        this.response = data;
+        if (data && data.response) {
+          this.fileName = data.response;
+          console.log(this.fileName);
+          this.imageSelected = true;
+          this.progress = data.progress.percent;
+          this.photo.fileName = this.fileName;
+        }
+      });
     });
+  }
+
+  beforeUpload(data: any): void {
+    if (data.size > this.sizeLimit) {
+      data.setAbort();
+      alert('File is too large, max size = 7 MB');
+    }
   }
 
   handlePreviewData(data: any) {

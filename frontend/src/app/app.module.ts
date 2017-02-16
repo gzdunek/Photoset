@@ -7,7 +7,6 @@ import {HomeComponent} from "./components/home/home.component";
 import {HttpModule} from "@angular/http";
 import {FormsModule} from "@angular/forms";
 import {AddPhotoComponent} from "./components/add-photo/add-photo.component";
-import {UPLOAD_DIRECTIVES} from "ng2-uploader/ng2-uploader";
 import {RegisterUserComponent} from "./components/register-user/register-user.component";
 import {AsyncEmailValidator} from "./validators/async-email.validator";
 import {AsyncUsernameValidator} from "./validators/async-username.validator";
@@ -21,10 +20,11 @@ import {AutoCompleteModule} from "primeng/components/autocomplete/autocomplete";
 import {SearchComponent} from "./components/search/search.component";
 import {PhotoCardComponent} from "./components/photo-card/photo-card.component";
 import {InfiniteScrollModule} from "angular2-infinite-scroll";
+import {NgUploaderModule} from "ngx-uploader";
 @NgModule({
-  imports: [BrowserModule, routing, HttpModule, FormsModule, AutoCompleteModule, InfiniteScrollModule],
+  imports: [BrowserModule, routing, HttpModule, FormsModule, AutoCompleteModule, InfiniteScrollModule, NgUploaderModule],
   providers: [UserService, LoggedInGuard, Title],
-  declarations: [AppComponent, NavbarComponent, HomeComponent, AddPhotoComponent, UPLOAD_DIRECTIVES, RegisterUserComponent,
+  declarations: [AppComponent, NavbarComponent, HomeComponent, AddPhotoComponent, RegisterUserComponent,
     AsyncEmailValidator, EqualValidator, AsyncUsernameValidator, LoginUserComponent, DetailUserComponent,
     FindUsernameInListPipe, SearchComponent, PhotoCardComponent],
   bootstrap: [AppComponent]

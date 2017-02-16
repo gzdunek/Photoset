@@ -14,8 +14,9 @@
         <div class="form-group">
           <div class="btn btn-primary btn-file">
             <span class="glyphicon glyphicon-camera"></span> Browse for image
-            <input type="file" accept="image/jpeg,image/png" ngFileSelect [options]="basicOptions"
+            <input type="file" ngFileSelect [options]="basicOptions"
                    (onUpload)="handleUpload($event)" (onPreviewData)="handlePreviewData($event)"
+                   (beforeUpload)="beforeUpload($event)"
                    id="uploadImage" [(ngModel)]="input" name="input"/>
           </div>
 
